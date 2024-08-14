@@ -81,7 +81,7 @@ export const Deatils = () => {
                 </Grid>
 
                 <div className="tagLine">
-                    <p id="madeBySurbhi">Made with ❤️ by Surbhi Ranjan</p>
+                    <p id="madeBySurbhi">Made with ❤️ by <a href="https://github.com/surbhir506/">Surbhi Ranjan</a></p>
                 </div>
             </Box >
         </>
