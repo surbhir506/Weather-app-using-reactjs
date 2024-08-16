@@ -1,4 +1,4 @@
-import { Button, Center, Flex, Icon, Input, useToast } from "@chakra-ui/react";
+import { Button, Center, Flex, Icon, Input, useToast, Image, Box } from "@chakra-ui/react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getWeatherByCity, getWeatherByLocation } from "../redux/actions";
@@ -19,7 +19,13 @@ export const Navbar = () => {
     }
 
     return (
-        <Flex p={'10px'} minH={'70px'} bg={'#8644A2'} justifyContent={'center'} flexDirection={['column', 'row']} gap={['10px', '0px']}>
+        <Flex p={'10px'} minH={'70px'} bg={'#8644A2'} justifyContent={'space-between'} alignItems={'center'} flexDirection={['column', 'row']} gap={['10px', '0px']}>
+            {/* Logo Section */}
+            <Box ml={'20px'}> {/* Adjusted the margin-left to move the logo slightly to the right */}
+                <Image src="weatherlogo.png" alt="Logo" h="50px" />
+            </Box>
+            
+            {/* Search Section */}
             <Center px={'10px'}>
                 <Input
                     onKeyPress={({ key }) => { key === "Enter" ? handleChnage() : undefined }}
@@ -40,10 +46,12 @@ export const Navbar = () => {
                     Search
                 </Button>
             </Center>
+
+            {/* Location Section */}
             <Center px={'10px'}>
                 <Button
                     bg={'#35155D'}
-                    _hover={{ 'bg': '35155D' }}
+                    _hover={{ 'bg': '#35155D' }}
                     color={'white'}
                     w={'100%'}
                     borderRadius={'15px'}
